@@ -116,6 +116,14 @@ def upload_file(rconfig, abs_file_path, upload_dir):
     print line,
     p.communicate()
 
+def flash_image(c):
+    img_name = 'openwrt-ar71xx-generic-tl-wdr4300-v1-squashfs-sysupgrade.bin'
+    bin_dir = '{}/images_gen/{}'.format(os.path.split(abs_template)[0], c['router']['hostname'])
+
+    upload_file(c['router'], os.path.join(bin_dir, img_name), '/tmp')
+    rexec(c['router'], 'echo 3 > /proc/sys/vm/drop_caches')
+    rexec(c['router'], 'mtd -r write /tmp/{} firmware'.format(img_name))
+
 if __name__ == '__main__':
 
   if ('-d' in args.grouped) and args.grouped['-d']:
@@ -248,3 +256,7 @@ if __name__ == '__main__':
     puts(colored.magenta('Generating image for: ') + colored.blue(rconfig['hostname']))
     generate_images(c, router_profile)
     puts(colored.magenta('Done generating image!'))
+    if '--flash' in  args.grouped:
+        puts(colored.magenta('FLASHING image! - ') + colored.blue(rconfig['hostname']))
+        flash_image(c)
+        puts(colored.magenta('Done flashing image!'))
