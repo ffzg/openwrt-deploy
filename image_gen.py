@@ -89,6 +89,32 @@ def generate_images(c, profile):
     print line,
   p.communicate()
 
+def rexec(rconfig, cmd):
+  exec_cmd = [
+          'ssh',
+          '-o',
+          'ServerAliveInterval=5',
+          'root@{}'.format(rconfig['network']['mgmt']['ip']),
+          cmd
+          ]
+
+  p = Popen(exec_cmd, stdout=PIPE, stderr=PIPE, bufsize=1)
+  for line in iter(p.stdout.readline, b''):
+    print line,
+  p.communicate()
+
+def upload_file(rconfig, abs_file_path, upload_dir):
+  upload_cmd = [
+                'scp',
+                 abs_file_path,
+                 'root@{}:{}'.format(rconfig['network']['mgmt']['ip'], upload_dir)
+                 ]
+  print(upload_cmd)
+
+  p = Popen(upload_cmd, stdout=PIPE, stderr=PIPE, bufsize=1)
+  for line in iter(p.stdout.readline, b''):
+    print line,
+    p.communicate()
 
 if __name__ == '__main__':
 
@@ -151,38 +177,20 @@ if __name__ == '__main__':
     upload_file = args.grouped['--upload-file'].last
     files_gen_abs = os.path.abspath(res_dir)
     for rconfig in config['routers']:
-      upload_cmd = [
-                    'scp',
-                    os.path.join(files_gen_abs, rconfig['hostname']) +  upload_file,
-                    'root@{}:{}'.format(rconfig['network']['mgmt']['ip'], upload_file)
-                    ]
-      print(upload_cmd)
-
-      p = Popen(upload_cmd, stdout=PIPE, stderr=PIPE, bufsize=1)
-      for line in iter(p.stdout.readline, b''):
-        print line,
-      p.communicate()
+      abs_ufile = os.path.join(files_gen_abs, rconfig['hostname']) + upload_file
+      upload_file(rconfig, os.path.join(abs_ufile, upload_file))
 
     puts(colored.yellow('Done uploading...'))
+    sys.exit(0)
 
   if ('--exec' in  args.grouped) and args.grouped['--exec']:
     puts(colored.yellow('Exec command on remote router(s)..'))
     cmd = args.grouped['--exec'].last
     for rconfig in config['routers']:
-      exec_cmd = [
-              'ssh',
-              'root@{}'.format(rconfig['network']['mgmt']['ip']),
-              cmd
-              ]
-
-      p = Popen(exec_cmd, stdout=PIPE, stderr=PIPE, bufsize=1)
-      for line in iter(p.stdout.readline, b''):
-        print line,
-      p.communicate()
+      rexec(rconfig, cmd)
 
     puts(colored.yellow('Done execing...'))
     sys.exit(0)
-
 
   puts(colored.yellow('Going to config generation...'))
   for rconfig in config['routers']:
