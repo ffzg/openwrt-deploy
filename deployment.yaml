@@ -1,0 +1,226 @@
+global:
+  network:
+      - name: "ffzgwlan"
+        vlan: 4
+      - name: "eduroam"
+        vlan: 5
+      - name: "FF-LOCAL"
+        password: "maXue6sDUTub"
+  pkgs:
+    - "-dnsmasq"
+    - "-wpad-mini"
+    - "-kmod-ppp"
+    - "-kmod-pppox"
+    - "-kmod-pppoe"
+    - "-kmod-ipt-nat"
+    - "-kmod-ipt-conntrack"
+    - "-ppp"
+    - "-kmod-ipt-nathelper"
+    - "hostapd"
+    - "iftop"
+    - "ebtables"
+    - "muninlite"
+    - "ethtool"
+    - "collectd"
+  ssh_keys:
+    - "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDfiDA+0sjd5WkhyHR5i6ANA3cw4HB+Mbm/HOIcIIPTPj6mYYytdO8wVqA+pYZEJJ/lpi7ew/Qr66UVp5Cqpcn5wrWl39PUuWw0wJSWYc+QH6hYkSk6Wa4J5IoWC+QQ9QW6/AzfjTpWV5rKbRlfSE1EwbqEzn4kur8848kQFx2u7af+DTS+yzcQe/qKmEr4xY/TOCnKDb328nTDgocQtZ4r9AnRs7bMpWWEEJ/5UaF7iwdwakP3aAWF/KTiCNYUACh42ukEytMpA0OWYpy2nmANXoNFPbqQ/R9Y+Ji8qF1FluH+wX4IoB/uTqKVBuXbRu+yNt5wU4pLHl1EdGt+1vy5 lblasc@gilgamesh"
+
+  default_profile: "TLWDR4300"
+
+routers:
+  - hostname: "wap-test"
+    wifi2:
+      channel: 11
+    wifi5:
+      channel: 36
+    network:
+      mgmt:
+        ip: "10.20.0.141"
+
+  - hostname: "wap-aula-centar"
+    wifi2:
+      channel: 11
+    wifi5:
+      channel: 48
+    network:
+      mgmt:
+        ip: "10.20.0.151"
+
+  - hostname: "wap-aula-s"
+    wifi2:
+      channel: 6
+    wifi5:
+      channel: 40
+    network:
+      mgmt:
+        ip: "10.20.0.104"
+
+  - hostname: "wap-aula-j"
+    wifi2:
+      channel: 1
+    wifi5:
+      channel: 44
+    network:
+      mgmt:
+        ip: "10.20.0.103"
+
+  - hostname: "wap-a100-s"
+    wifi2:
+      channel: 11
+    wifi5:
+      channel: 36
+    network:
+      mgmt:
+        ip: "10.20.0.106"
+
+  - hostname: "wap-d7"
+    wifi2:
+      channel: 11
+    wifi5:
+      channel: 48
+    network:
+      mgmt:
+        ip: "10.20.0.102"
+
+  - hostname: "wap-referada"
+    wifi2:
+      channel: 1
+    wifi5:
+      channel: 36
+    network:
+      mgmt:
+        ip: "10.20.0.148"
+
+  - hostname: "wap-ubnt-pico"
+    profile: "UBNT"
+    wifi2:
+      channel: 11
+    network:
+      mgmt:
+        ip: "10.20.0.149"
+
+  - hostname: "wap-ubnt-nano"
+    profile: "UBNT"
+    wifi2:
+      channel: 1
+    network:
+      mgmt:
+        ip: "10.20.0.150"
+
+  - hostname: "wap-lib-0s"
+    wifi2:
+      channel: 1
+    wifi5:
+      channel: 36
+    network:
+      mgmt:
+        ip: "10.20.0.136"
+
+  - hostname: "wap-lib-0j"
+    wifi2:
+      channel: 11
+    wifi5:
+      channel: 40
+    network:
+      mgmt:
+        ip: "10.20.0.135"
+
+  - hostname: "wap-lib-1s"
+    wifi2:
+      channel: 6
+    wifi5:
+      channel: 44
+    network:
+      mgmt:
+        ip: "10.20.0.125"
+
+  - hostname: "wap-lib-1j"
+    wifi2:
+      channel: 1
+    wifi5:
+      channel: 48
+    network:
+      mgmt:
+        ip: "10.20.0.126"
+
+  - hostname: "wap-lib-2s"
+    wifi2:
+      channel: 1
+    wifi5:
+      channel: 40
+    network:
+      mgmt:
+        ip: "10.20.0.127"
+
+  - hostname: "wap-lib-2j"
+    wifi2:
+      channel: 11
+    wifi5:
+      channel: 36
+    network:
+      mgmt:
+        ip: "10.20.0.128"
+
+  - hostname: "wap-lib-3s"
+    wifi2:
+      channel: 6
+    wifi5:
+      channel: 48
+    network:
+      mgmt:
+        ip: "10.20.0.130"
+
+  - hostname: "wap-lib-3j"
+    wifi2:
+      channel: 1
+    wifi5:
+      channel: 44
+    network:
+      mgmt:
+        ip: "10.20.0.129"
+
+  - hostname: "wap-lib-4s"
+    wifi2:
+      channel: 11
+    wifi5:
+      channel: 36
+    network:
+      mgmt:
+        ip: "10.20.0.133"
+
+  - hostname: "wap-lib-4j"
+    wifi2:
+      channel: 6
+    wifi5:
+      channel: 40
+    network:
+      mgmt:
+        ip: "10.20.0.134"
+
+  - hostname: "wap-lib-5s"
+    wifi2:
+      channel: 1
+    wifi5:
+      channel: 44
+    network:
+      mgmt:
+        ip: "10.20.0.132"
+
+  - hostname: "wap-lib-5j"
+    wifi2:
+      channel: 11
+    wifi5:
+      channel: 48
+    network:
+      mgmt:
+        ip: "10.20.0.131"
+
+
+  - hostname: "wap-lib-5z"
+    wifi2:
+      channel: 6
+    wifi5:
+      channel: 36
+    network:
+      mgmt:
+        ip: "10.20.0.139"

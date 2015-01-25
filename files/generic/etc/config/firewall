@@ -1,0 +1,15 @@
+config defaults
+	option syn_flood	1
+	option input		ACCEPT
+	option output		ACCEPT
+	option forward		DROP
+# Uncomment this line to disable ipv6 rules
+	option disable_ipv6	1
+
+config zone
+	option name		mgmt
+	list   network		'mgmt'
+	option input		ACCEPT
+	option output		ACCEPT
+	option forward		DROP
+

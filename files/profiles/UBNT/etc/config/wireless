@@ -1,0 +1,29 @@
+config wifi-device  radio0
+  option type     mac80211
+  option channel  {{ router.wifi2.channel }}
+  option hwmode 11g
+  option path 'pci0000:00/0000:00:00.0'
+  option htmode HT20
+
+config wifi-iface
+  option device   'radio0'
+  option network  'eduroam'
+  option mode     'ap'
+  option ssid 'eduroam'
+  option encryption 'wpa2+aes'
+  option auth_secret 's4m0g4m1zn4m0'
+  option auth_server '10.20.0.249'
+  option acct_secret 's4m0g4m1zn4m0'
+  option acct_server '10.20.0.249'
+
+config wifi-iface
+  option device   'radio0'
+  option network  'ffzgwlan'
+  option mode     'ap'
+  option ssid   'FFZGwlan'
+  option encryption  'wpa2+aes'
+  option auth_secret 's4m0g4m1zn4m0'
+  option auth_server '10.20.0.250'
+  option acct_secret 's4m0g4m1zn4m0'
+  option acct_server '10.20.0.250'
+

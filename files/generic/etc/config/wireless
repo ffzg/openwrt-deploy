@@ -1,0 +1,77 @@
+config wifi-device  radio0
+  option type     mac80211
+  option channel  {{ router.wifi2.channel }}
+  option hwmode 11g
+  option path 'platform/ar934x_wmac'
+  option htmode HT20
+  option supported_rates '9000 12000 18000 24000 36000 48000 54000'
+  option basic_rate '12000 24000 54000'
+
+config wifi-iface
+  option device   'radio0'
+  option network  'eduroam'
+  option mode     'ap'
+  option ssid 'eduroam'
+  option encryption 'wpa2+aes'
+  option auth_secret 's4m0g4m1zn4m0'
+  option auth_server '10.20.0.249'
+  option acct_secret 's4m0g4m1zn4m0'
+  option acct_server '10.20.0.249'
+
+config wifi-iface
+  option device   'radio0'
+  option network  'ffzgwlan'
+  option mode     'ap'
+  option ssid   'FFZGwlan'
+  option encryption  'wpa2+aes'
+  option auth_secret 's4m0g4m1zn4m0'
+  option auth_server '10.20.0.250'
+  option acct_secret 's4m0g4m1zn4m0'
+  option acct_server '10.20.0.250'
+
+config wifi-iface
+  option device   'radio0'
+  option network  'ffzgwlan'
+  option mode     'ap'
+  option ssid   'FF-LOCAL'
+  option encryption  'psk2+aes'
+  option key 'maXue6sDUTub'
+
+{% if router.wifi5 -%}
+config wifi-device  radio1
+  option type     mac80211
+  option channel  {{ router.wifi5.channel }}
+  option hwmode 11na
+  option path 'pci0000:00/0000:00:00.0'
+  option htmode HT40+
+
+config wifi-iface
+  option device   'radio1'
+  option network  'eduroam'
+  option mode     'ap'
+  option ssid 'eduroam'
+  option encryption 'wpa2+aes'
+  option auth_secret 's4m0g4m1zn4m0'
+  option auth_server '10.20.0.249'
+  option acct_secret 's4m0g4m1zn4m0'
+  option acct_server '10.20.0.249'
+
+config wifi-iface
+  option device   'radio1'
+  option network  'ffzgwlan'
+  option mode     'ap'
+  option ssid   'FFZGwlan'
+  option encryption  'wpa2+aes'
+  option auth_secret 's4m0g4m1zn4m0'
+  option auth_server '10.20.0.250'
+  option acct_secret 's4m0g4m1zn4m0'
+  option acct_server '10.20.0.250'
+
+config wifi-iface
+  option device   'radio1'
+  option network  'ffzgwlan'
+  option mode     'ap'
+  option ssid   'FF-LOCAL'
+  option encryption  'psk2+aes'
+  option key 'maXue6sDUTub'
+{% endif -%}

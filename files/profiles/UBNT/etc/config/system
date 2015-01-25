@@ -1,0 +1,13 @@
+
+config system
+	option hostname '{{ router.hostname }}'
+	option timezone 'UTC'
+
+config timeserver 'ntp'
+	list server 'zg1.ntp.carnet.hr'
+	list server 'zg2.ntp.carnet.hr'
+	list server 'ri.ntp.carnet.hr'
+	list server 'os.ntp.carnet.hr'
+	option enabled '1'
+	option enable_server '1'
+

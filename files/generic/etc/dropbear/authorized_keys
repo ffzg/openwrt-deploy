@@ -1,0 +1,5 @@
+{%- if global.ssh_keys -%}
+{%- for key in global.ssh_keys -%}
+{{ key }}
+{%- endfor -%}
+{%- endif -%}
