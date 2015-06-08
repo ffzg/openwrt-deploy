@@ -1,0 +1,7 @@
+echo 0 > /sys/kernel/debug/ieee80211/phy0/ath9k/ani
+echo 0 > /sys/kernel/debug/ieee80211/phy1/ath9k/ani
+
+/etc/init.d/cron enable
+/etc/init.d/cron start
+
+exit 0
