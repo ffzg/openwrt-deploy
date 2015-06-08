@@ -182,11 +182,11 @@ if __name__ == '__main__':
 
   if ('--upload-file' in  args.grouped) and args.grouped['--upload-file']:
     puts(colored.yellow('Going to file upload...'))
-    upload_file = args.grouped['--upload-file'].last
+    u_file = args.grouped['--upload-file'].last
     files_gen_abs = os.path.abspath(res_dir)
     for rconfig in config['routers']:
-      abs_ufile = os.path.join(files_gen_abs, rconfig['hostname']) + upload_file
-      upload_file(rconfig, os.path.join(abs_ufile, upload_file))
+      abs_ufile = os.path.join(files_gen_abs, rconfig['hostname']) + u_file
+      upload_file(rconfig, abs_ufile, u_file)
 
     puts(colored.yellow('Done uploading...'))
     sys.exit(0)
