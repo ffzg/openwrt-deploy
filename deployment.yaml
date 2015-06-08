@@ -28,7 +28,7 @@ global:
   default_profile: "TLWDR4300"
 
 routers:
-  - hostname: "wap-test"
+  - hostname: "wap-c000-s"
     wifi2:
       channel: 11
     wifi5:
@@ -36,6 +36,78 @@ routers:
     network:
       mgmt:
         ip: "10.20.0.141"
+
+  - hostname: "wap-c000-j"
+    wifi2:
+      channel: 6
+    wifi5:
+      channel: 48
+    network:
+      mgmt:
+        ip: "10.20.0.122"
+
+  - hostname: "wap-a000-si"
+    wifi2:
+      channel: 1
+    wifi5:
+      channel: 48
+    network:
+      mgmt:
+        ip: "10.20.0.115"
+
+  - hostname: "wap-a000-sz"
+    wifi2:
+      channel: 11
+    wifi5:
+      channel: 44
+    network:
+      mgmt:
+        ip: "10.20.0.153"
+
+  - hostname: "wap-aula-lift"
+    wifi2:
+      channel: 1
+    wifi5:
+      channel: 36
+    network:
+      mgmt:
+        ip: "10.20.0.154"
+
+  - hostname: "wap-a000-ji"
+    wifi2:
+      channel: 1
+    wifi5:
+      channel: 36
+    network:
+      mgmt:
+        ip: "10.20.0.121"
+
+  - hostname: "wap-a000-jz"
+    wifi2:
+      channel: 6
+    wifi5:
+      channel: 40
+    network:
+      mgmt:
+        ip: "10.20.0.155"
+
+  - hostname: "wap-b000-s"
+    wifi2:
+      channel: 6
+    wifi5:
+      channel: 40
+    network:
+      mgmt:
+        ip: "10.20.0.156"
+
+  - hostname: "wap-b000-j"
+    wifi2:
+      channel: 11
+    wifi5:
+      channel: 44
+    network:
+      mgmt:
+        ip: "10.20.0.157"
 
   - hostname: "wap-aula-centar"
     wifi2:
@@ -64,15 +136,6 @@ routers:
       mgmt:
         ip: "10.20.0.103"
 
-  - hostname: "wap-a100-s"
-    wifi2:
-      channel: 11
-    wifi5:
-      channel: 36
-    network:
-      mgmt:
-        ip: "10.20.0.106"
-
   - hostname: "wap-d7"
     wifi2:
       channel: 11
@@ -90,6 +153,204 @@ routers:
     network:
       mgmt:
         ip: "10.20.0.148"
+
+  - hostname: "wap-dekanat"
+    wifi2:
+      channel: 6
+    wifi5:
+      channel: 40
+    network:
+      mgmt:
+        ip: "10.20.0.119"
+
+  - hostname: "wap-a100-si"
+    wifi2:
+      channel: 11
+    wifi5:
+      channel: 44
+    network:
+      mgmt:
+        ip: "10.20.0.106"
+
+  - hostname: "wap-a100-sz1"
+    wifi2:
+      channel: 6
+    wifi5:
+      channel: 48
+    network:
+      mgmt:
+        ip: "10.20.0.158"
+
+  - hostname: "wap-a100-sz2"
+    wifi2:
+      channel: 11
+    wifi5:
+      channel: 36
+    network:
+      mgmt:
+        ip: "10.20.0.159"
+
+  - hostname: "wap-a100-ji"
+    wifi2:
+      channel: 11
+    wifi5:
+      channel: 48
+    network:
+      mgmt:
+        ip: "10.20.0.105"
+
+  - hostname: "wap-a100-jz1"
+    wifi2:
+      channel: 1
+    wifi5:
+      channel: 44
+    network:
+      mgmt:
+        ip: "10.20.0.145"
+
+  - hostname: "wap-a100-jz2"
+    wifi2:
+      channel: 6
+    wifi5:
+      channel: 40
+    network:
+      mgmt:
+        ip: "10.20.0.160"
+
+  - hostname: "wap-c100-s"
+    wifi2:
+      channel: 6
+    wifi5:
+      channel: 36
+    network:
+      mgmt:
+        ip: "10.20.0.116"
+
+  - hostname: "wap-c100-j"
+    wifi2:
+      channel: 1
+    wifi5:
+      channel: 40
+    network:
+      mgmt:
+        ip: "10.20.0.122"
+
+  - hostname: "wap-b100-s"
+    wifi2:
+      channel: 1
+    wifi5:
+      channel: 40
+    network:
+      mgmt:
+        ip: "10.20.0.111"
+
+  - hostname: "wap-b100-j"
+    wifi2:
+      channel: 6
+    wifi5:
+      channel: 36
+    network:
+      mgmt:
+        ip: "10.20.0.162"
+
+  - hostname: "wap-a200-si"
+    wifi2:
+      channel: 6
+    wifi5:
+      channel: 36
+    network:
+      mgmt:
+        ip: "10.20.0.109"
+
+  - hostname: "wap-a200-s"
+    wifi2:
+      channel: 1
+    wifi5:
+      channel: 48
+    network:
+      mgmt:
+        ip: "10.20.0.108"
+
+  - hostname: "wap-a200-j"
+    wifi2:
+      channel: 11
+    wifi5:
+      channel: 40
+    network:
+      mgmt:
+        ip: "10.20.0.163"
+
+  - hostname: "wap-a200-ji"
+    wifi2:
+      channel: 11
+    wifi5:
+      channel: 44
+    network:
+      mgmt:
+        ip: "10.20.0.113"
+
+  - hostname: "wap-a200-jz1"
+    wifi2:
+      channel: 6
+    wifi5:
+      channel: 48
+    network:
+      mgmt:
+        ip: "10.20.0.112"
+
+  - hostname: "wap-a200-jz2"
+    wifi2:
+      channel: 11
+    wifi5:
+      channel: 40
+    network:
+      mgmt:
+        ip: "10.20.0.164"
+
+  - hostname: "wap-a200-sz1"
+    wifi2:
+      channel: 1
+    wifi5:
+      channel: 48
+    network:
+      mgmt:
+        ip: "10.20.0.165"
+
+  - hostname: "wap-a200-sz2"
+    wifi2:
+      channel: 6
+    wifi5:
+      channel: 44
+    network:
+      mgmt:
+        ip: "10.20.0.166"
+
+  - hostname: "wap-b200-s"
+    wifi2:
+      channel: 11
+    wifi5:
+      channel: 44
+    network:
+      mgmt:
+        ip: "10.20.0.167"
+
+  - hostname: "wap-b200-j"
+    wifi2:
+      channel: 1
+    wifi5:
+      channel: 36
+    network:
+      mgmt:
+        ip: "10.20.0.168"
+
+  - hostname: "wap-a200-z"
+    wifi2:
+      channel: 1
+    wifi5:
+      channel: 36
+    network:
+      mgmt:
+        ip: "10.20.0.117"
 
   - hostname: "wap-ubnt-pico"
     profile: "UBNT"
