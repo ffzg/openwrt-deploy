@@ -5,7 +5,8 @@ config wifi-device  radio0
   option path 'platform/ar934x_wmac'
   option htmode HT20
   option supported_rates '9000 12000 18000 24000 36000 48000 54000'
-  option basic_rate '12000 24000 54000'
+  option basic_rate '9000 12000 24000 54000'
+
 
 config wifi-iface
   option device   'radio0'
@@ -17,6 +18,7 @@ config wifi-iface
   option auth_server '10.20.0.249'
   option acct_secret 's4m0g4m1zn4m0'
   option acct_server '10.20.0.249'
+  option disassoc_low_ack 0
 
 config wifi-iface
   option device   'radio0'
@@ -28,6 +30,7 @@ config wifi-iface
   option auth_server '10.20.0.250'
   option acct_secret 's4m0g4m1zn4m0'
   option acct_server '10.20.0.250'
+  option disassoc_low_ack 0
 
 config wifi-iface
   option device   'radio0'
@@ -36,6 +39,7 @@ config wifi-iface
   option ssid   'FF-LOCAL'
   option encryption  'psk2+aes'
   option key 'maXue6sDUTub'
+  option disassoc_low_ack 0
 
 {% if router.wifi5 -%}
 config wifi-device  radio1
@@ -43,7 +47,9 @@ config wifi-device  radio1
   option channel  {{ router.wifi5.channel }}
   option hwmode 11na
   option path 'pci0000:00/0000:00:00.0'
-  option htmode HT40+
+  option htmode HT20
+  option supported_rates '9000 12000 18000 24000 36000 48000 54000'
+  option basic_rate '9000 12000 24000 54000'
 
 config wifi-iface
   option device   'radio1'
@@ -55,6 +61,7 @@ config wifi-iface
   option auth_server '10.20.0.249'
   option acct_secret 's4m0g4m1zn4m0'
   option acct_server '10.20.0.249'
+  option disassoc_low_ack 0
 
 config wifi-iface
   option device   'radio1'
@@ -66,6 +73,7 @@ config wifi-iface
   option auth_server '10.20.0.250'
   option acct_secret 's4m0g4m1zn4m0'
   option acct_server '10.20.0.250'
+  option disassoc_low_ack 0
 
 config wifi-iface
   option device   'radio1'
@@ -74,4 +82,5 @@ config wifi-iface
   option ssid   'FF-LOCAL'
   option encryption  'psk2+aes'
   option key 'maXue6sDUTub'
+  option disassoc_low_ack 0
 {% endif -%}
