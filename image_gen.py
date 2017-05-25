@@ -24,7 +24,7 @@ deployment_file = os.path.abspath('deployment.yaml')
 
 template_dir = 'files'
 res_dir = 'files_gen'
-imagebuilder_dir = 'OpenWrt-ImageBuilder-ar71xx_generic-for-linux-x86_64'
+imagebuilder_dir = 'lede-imagebuilder-17.01.1-ar71xx-generic.Linux-x86_64'
 
 abs_template = os.path.abspath(template_dir)
 abs_res = os.path.join(os.path.split(abs_template)[0], res_dir)
@@ -117,7 +117,7 @@ def upload_file(rconfig, abs_file_path, upload_dir):
     p.communicate()
 
 def flash_image(c):
-    img_name = 'openwrt-ar71xx-generic-tl-wdr4300-v1-squashfs-sysupgrade.bin'
+    img_name = 'lede-17.01.1-ar71xx-generic-tl-wdr4300-v1-squashfs-sysupgrade.bin'
     bin_dir = '{}/images_gen/{}'.format(os.path.split(abs_template)[0], c['router']['hostname'])
 
     upload_file(c['router'], os.path.join(bin_dir, img_name), '/tmp')
