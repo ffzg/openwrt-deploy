@@ -7,7 +7,6 @@ config wifi-device  radio0
   option supported_rates '9000 12000 18000 24000 36000 48000 54000'
   option basic_rate '9000 12000 24000 54000'
 
-
 config wifi-iface
   option device   'radio0'
   option network  'eduroam'
@@ -40,6 +39,16 @@ config wifi-iface
   option encryption  'psk2+aes'
   option key 'maXue6sDUTub'
   option disassoc_low_ack 0
+
+config wifi-iface
+  option device   'radio0'
+  option network  'ffzgwlan'
+  option mode     'ap'
+  option ssid   'FF-GUEST'
+  option encryption  'psk2+aes'
+  option key 'nemampojma'
+  option disassoc_low_ack 0
+  option disabled '1'
 
 {% if router.wifi5 -%}
 config wifi-device  radio1
@@ -83,4 +92,14 @@ config wifi-iface
   option encryption  'psk2+aes'
   option key 'maXue6sDUTub'
   option disassoc_low_ack 0
+
+config wifi-iface
+  option device   'radio1'
+  option network  'ffzgwlan'
+  option mode     'ap'
+  option ssid   'FF-GUEST'
+  option encryption  'psk2+aes'
+  option key 'nemampojma'
+  option disassoc_low_ack 0
+  option disabled '1'
 {% endif -%}
