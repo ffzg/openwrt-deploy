@@ -23,9 +23,9 @@ global:
     - "ethtool"
     - "collectd"
   ssh_keys:
-    - "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDfiDA+0sjd5WkhyHR5i6ANA3cw4HB+Mbm/HOIcIIPTPj6mYYytdO8wVqA+pYZEJJ/lpi7ew/Qr66UVp5Cqpcn5wrWl39PUuWw0wJSWYc+QH6hYkSk6Wa4J5IoWC+QQ9QW6/AzfjTpWV5rKbRlfSE1EwbqEzn4kur8848kQFx2u7af+DTS+yzcQe/qKmEr4xY/TOCnKDb328nTDgocQtZ4r9AnRs7bMpWWEEJ/5UaF7iwdwakP3aAWF/KTiCNYUACh42ukEytMpA0OWYpy2nmANXoNFPbqQ/R9Y+Ji8qF1FluH+wX4IoB/uTqKVBuXbRu+yNt5wU4pLHl1EdGt+1vy5 lblasc@gilgamesh"
+    - "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC018cAOinMtzPOjPGaMqllVR0dD2YdnhttMbu3vvSSmQtQhSq6qb06Q1sm45JJyxNoQYIQgUuMl10UrIVPEc599ArkA9kmrdOJ0+dz0QIB3rQtmeH1plN0vFgGFbwD0MYs+xgzQjwSXU23kzKORX5O+Yd6mulgbTgTJqMc1AitmiQPfWUBKbP7m1nLl19PjfXeH+xzJvWyNL+dgIsPYGJTKrOuDc2nGN6n/J3F1SOREPuhxuYwBBEVowO8D22dbXJ3joJ/E2Wg8qKQjr3wqYLfzENPno1/PkGPlgXrxTnG2xWLeCzFGWn5MEbUOeOxaNYWiZs33CC+tnsVvBKW8FWX wifiadmin"
 
-  default_profile: "TLWDR4300"
+  default_profile: "tl-wdr4300-v1"
 
 routers:
   - hostname: "wap-c000-s"
@@ -59,7 +59,7 @@ routers:
     wifi2:
       channel: 11
     wifi5:
-      channel: 44
+      channel: 48
     network:
       mgmt:
         ip: "10.20.0.153"
@@ -154,15 +154,6 @@ routers:
       mgmt:
         ip: "10.20.0.148"
 
-  - hostname: "wap-dekanat"
-    wifi2:
-      channel: 6
-    wifi5:
-      channel: 40
-    network:
-      mgmt:
-        ip: "10.20.0.119"
-
   - hostname: "wap-a100-si"
     wifi2:
       channel: 11
@@ -221,7 +212,7 @@ routers:
     wifi2:
       channel: 6
     wifi5:
-      channel: 36
+      channel: 40
     network:
       mgmt:
         ip: "10.20.0.116"
@@ -233,7 +224,7 @@ routers:
       channel: 40
     network:
       mgmt:
-        ip: "10.20.0.122"
+        ip: "10.20.0.118"
 
   - hostname: "wap-b100-s"
     wifi2:
@@ -251,7 +242,7 @@ routers:
       channel: 36
     network:
       mgmt:
-        ip: "10.20.0.162"
+        ip: "10.20.0.180"
 
   - hostname: "wap-a200-si"
     wifi2:
@@ -485,3 +476,291 @@ routers:
     network:
       mgmt:
         ip: "10.20.0.139"
+
+  - hostname: "wap-ekonomat"
+    wifi2:
+      channel: 6
+    wifi5:
+      channel: 36
+    network:
+      mgmt:
+        ip: "10.20.0.171"
+
+  - hostname: "wap-fond-a"
+    wifi2:
+      channel: 11
+    wifi5:
+      channel: 36
+    network:
+      mgmt:
+        ip: "10.20.0.161"
+
+  - hostname: "wap-fond-b"
+    wifi2:
+      channel: 6
+    wifi5:
+      channel: 48
+    network:
+      mgmt:
+        ip: "10.20.0.162"
+
+  - hostname: "wap-e300-i"
+    wifi2:
+      channel: 11
+    wifi5:
+      channel: 48
+    network:
+      mgmt:
+        ip: "10.20.0.172"
+
+  - hostname: "wap-e300-z"
+    wifi2:
+      channel: 11
+    wifi5:
+      channel: 40
+    network:
+      mgmt:
+        ip: "10.20.0.173"
+
+  - hostname: "wap-e300-c"
+    wifi2:
+      channel: 6
+    wifi5:
+      channel: 44
+    network:
+      mgmt:
+        ip: "10.20.0.174"
+
+  - hostname: "wap-b300-j"
+    wifi2:
+      channel: 11
+    wifi5:
+      channel: 36
+    network:
+      mgmt:
+        ip: "10.20.0.144"
+
+  - hostname: "wap-b300-s"
+    wifi2:
+      channel: 1
+    wifi5:
+      channel: 40
+    network:
+      mgmt:
+        ip: "10.20.0.184"
+
+  - hostname: "wap-a000-sz"
+    wifi2:
+      channel: 11
+    wifi5:
+      channel: 44
+    network:
+      mgmt:
+        ip: "10.20.0.153"
+
+  - hostname: "wap-a129"
+    wifi2:
+      channel: 11
+    wifi5:
+      channel: 64
+    network:
+      mgmt:
+        ip: "10.20.0.175"
+
+  - hostname: "wap-c300-s"
+    wifi2:
+      channel: 11
+    wifi5:
+      channel: 48
+    network:
+      mgmt:
+        ip: "10.20.0.176"
+  
+  - hostname: "wap-c300-j"
+    wifi2:
+      channel: 1
+    wifi5:
+      channel: 44
+    network:
+      mgmt:
+        ip: "10.20.0.183"
+
+  - hostname: "wap-ctrl"
+    wifi2:
+      channel: 1
+    wifi5:
+      channel: 36
+    network:
+      mgmt:
+        ip: "10.20.0.177"
+
+  - hostname: "wap-c200-s"
+    wifi2:
+      channel: 1
+    wifi5:
+      channel: 40
+    network:
+      mgmt:
+        ip: "10.20.0.181"
+
+  - hostname: "wap-c200-j"
+    wifi2:
+      channel: 6
+    wifi5:
+      channel: 36
+    network:
+      mgmt:
+        ip: "10.20.0.182"
+
+  - hostname: "wap-dekanat"
+    wifi2:
+      channel: 6
+    wifi5:
+      channel: 40
+    network:
+      mgmt:
+        ip: "10.20.0.119"
+  
+  - hostname: "wap-dekanat-2"
+    wifi2:
+      channel: 6
+    wifi5:
+      channel: 40
+    network:
+      mgmt:
+        ip: "10.20.0.120"
+  
+  - hostname: "wap-a300-sz"
+    wifi2:
+      channel: 1
+    wifi5:
+      channel: 44
+    network:
+      mgmt:
+        ip: "10.20.0.178"
+
+  - hostname: "wap-a300-jz"
+    wifi2:
+      channel: 6
+    wifi5:
+      channel: 40
+    network:
+      mgmt:
+        ip: "10.20.0.179"
+
+  - hostname: "wap-ka1"
+    wifi2:
+      channel: 6
+    wifi5:
+      channel: 40
+    network:
+      mgmt:
+        ip: "10.20.0.185"
+
+  - hostname: "wap-lib-zs1"
+    wifi2:
+      channel: 1
+    wifi5:
+      channel: 36
+    network:
+      mgmt:
+        ip: "10.20.0.191"
+
+  - hostname: "wap-lib-zs2"
+    wifi2:
+      channel: 6
+    wifi5:
+      channel: 40
+    network:
+      mgmt:
+        ip: "10.20.0.192"
+
+  - hostname: "wap-lib-zs3"
+    wifi2:
+      channel: 11
+    wifi5:
+      channel: 44
+    network:
+      mgmt:
+        ip: "10.20.0.193"
+
+  - hostname: "wap-lib-zs4"
+    wifi2:
+      channel: 6
+    wifi5:
+      channel: 40
+    network:
+      mgmt:
+        ip: "10.20.0.194"
+
+  - hostname: "wap-lib-zs5"
+    wifi2:
+      channel: 1
+    wifi5:
+      channel: 36
+    network:
+      mgmt:
+        ip: "10.20.0.195"
+
+  - hostname: "wap-lib-zs6"
+    wifi2:
+      channel: 11
+    wifi5:
+      channel: 44
+    network:
+      mgmt:
+        ip: "10.20.0.196"
+
+  - hostname: "wap-lib-zs7"
+    wifi2:
+      channel: 1
+    wifi5:
+      channel: 36
+    network:
+      mgmt:
+        ip: "10.20.0.197"
+
+  - hostname: "wap-lib-zs8"
+    wifi2:
+      channel: 6
+    wifi5:
+      channel: 40
+    network:
+      mgmt:
+        ip: "10.20.0.198"
+
+  - hostname: "wap-psistud"
+    wifi2:
+      channel: 1
+    wifi5:
+      channel: 44
+    network:
+      mgmt:
+        ip: "10.20.0.190"
+
+  - hostname: "wap-fond-c"
+    wifi2:
+      channel: 1
+    wifi5:
+      channel: 44
+    network:
+      mgmt:
+        ip: "10.20.0.123"
+
+  - hostname: "wap-fond-d"
+    wifi2:
+      channel: 11
+    wifi5:
+      channel: 36
+    network:
+      mgmt:
+        ip: "10.20.0.124"
+
+  - hostname: "wap-f300"
+    wifi2:
+      channel: 1
+    wifi5:
+      channel: 44
+    network:
+      mgmt:
+        ip: "10.20.0.199"
