@@ -28,6 +28,15 @@ global:
   default_profile: "tl-wdr4300-v1"
 
 routers:
+  - hostname: "wap-test"
+    wifi2:
+      channel: 1
+    wifi5:
+      channel: 40
+    network:
+      mgmt:
+        ip: "10.20.0.110"
+
   - hostname: "wap-c000-s"
     wifi2:
       channel: 11
