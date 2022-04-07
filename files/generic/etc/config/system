@@ -1,15 +1,17 @@
 
 config system
 	option hostname '{{ router.hostname }}'
-	option timezone 'UTC'
+	option timezone 'CET-1CEST,M3.5.0,M10.5.0/3'
+	option zonename 'Europe/Zagreb'
+	option log_ip '10.20.0.251'
+	option log_remote '1'
+	option log_port '514'
+	option log_proto 'tcp'
 
 config timeserver 'ntp'
-	list server 'zg1.ntp.carnet.hr'
-	list server 'zg2.ntp.carnet.hr'
-	list server 'ri.ntp.carnet.hr'
-	list server 'os.ntp.carnet.hr'
 	option enabled '1'
-	option enable_server '1'
+	option server '10.20.0.216'
+	option enable_server '0'
 
 config led 'led_usb1'
 	option name 'USB1'
