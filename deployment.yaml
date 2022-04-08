@@ -22,6 +22,7 @@ global:
     - "muninlite"
     - "ethtool"
     - "collectd"
+    - "lldpd"
   ssh_keys:
     - "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC018cAOinMtzPOjPGaMqllVR0dD2YdnhttMbu3vvSSmQtQhSq6qb06Q1sm45JJyxNoQYIQgUuMl10UrIVPEc599ArkA9kmrdOJ0+dz0QIB3rQtmeH1plN0vFgGFbwD0MYs+xgzQjwSXU23kzKORX5O+Yd6mulgbTgTJqMc1AitmiQPfWUBKbP7m1nLl19PjfXeH+xzJvWyNL+dgIsPYGJTKrOuDc2nGN6n/J3F1SOREPuhxuYwBBEVowO8D22dbXJ3joJ/E2Wg8qKQjr3wqYLfzENPno1/PkGPlgXrxTnG2xWLeCzFGWn5MEbUOeOxaNYWiZs33CC+tnsVvBKW8FWX wifiadmin"
 
