@@ -1,8 +1,8 @@
 config lldpd config
-	option enable_cdp 1
-	option enable_fdp 1
-	option enable_sonmp 1
-	option enable_edp 1
+	option enable_cdp 0
+	option enable_fdp 0
+	option enable_sonmp 0
+	option enable_edp 0
 
 	
 	option lldp_class 4
