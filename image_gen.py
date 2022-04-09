@@ -36,9 +36,9 @@ def render_file(original):
   return Template(template)
 
 def write_rendered_file(abs_template_path, full_file_path, prefix, content):
-  file_mask = os.stat(full_file_path).st_mode & 0777
+  file_mask = os.stat(full_file_path).st_mode & 0o777
   file_dir_path = os.path.split(full_file_path)[0]
-  file_dir_mask = os.stat(file_dir_path).st_mode & 0777
+  file_dir_mask = os.stat(file_dir_path).st_mode & 0o777
   path = os.path.relpath(full_file_path, abs_template_path)
 
   res_full_file_path = os.path.join(os.path.join(abs_res, prefix), path)
@@ -47,7 +47,7 @@ def write_rendered_file(abs_template_path, full_file_path, prefix, content):
   # create missing dirs or adjust mode
   # TODO: handle broken symlinks for init.d
   if os.path.exists(res_file_dir_path):
-    res_file_dir_mask = os.stat(res_file_dir_path).st_mode & 0777
+    res_file_dir_mask = os.stat(res_file_dir_path).st_mode & 0o777
     if res_file_dir_mask != file_dir_mask:
       os.chmod(res_file_dir_path, file_dir_mask)
   else:
@@ -86,7 +86,7 @@ def generate_images(c, profile):
 
   p = Popen(make_cmd, stdout=PIPE, stderr=PIPE, bufsize=1)
   for line in iter(p.stdout.readline, b''):
-    print line,
+    print(line, end=' ')
   p.communicate()
 
 def rexec(rconfig, cmd):
@@ -100,7 +100,7 @@ def rexec(rconfig, cmd):
 
   p = Popen(exec_cmd, stdout=PIPE, stderr=PIPE, bufsize=1)
   for line in iter(p.stdout.readline, b''):
-    print line,
+    print(line, end=' ')
   p.communicate()
 
 def upload_file(rconfig, abs_file_path, upload_dir):
@@ -113,7 +113,7 @@ def upload_file(rconfig, abs_file_path, upload_dir):
 
   p = Popen(upload_cmd, stdout=PIPE, stderr=PIPE, bufsize=1)
   for line in iter(p.stdout.readline, b''):
-    print line,
+    print(line, end=' ')
     p.communicate()
 
 def flash_image(c):
@@ -231,7 +231,7 @@ if __name__ == '__main__':
       for root, subdirs, files in os.walk(profile_dir):
         for filename in files:
           file_path = os.path.join(root, filename)
-          print file_path
+          print(file_path)
 
           with open(file_path, 'rb') as f:
             f_content = f.read()
