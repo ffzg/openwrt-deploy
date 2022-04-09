@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
 import os
@@ -24,7 +24,7 @@ deployment_file = os.path.abspath('deployment.yaml')
 
 template_dir = 'files'
 res_dir = 'files_gen'
-imagebuilder_dir = 'lede-imagebuilder-17.01.1-ar71xx-generic.Linux-x86_64'
+imagebuilder_dir = 'openwrt-imagebuilder-21.02.1-ath79-generic.Linux-x86_64'
 
 abs_template = os.path.abspath(template_dir)
 abs_res = os.path.join(os.path.split(abs_template)[0], res_dir)
@@ -219,7 +219,7 @@ if __name__ == '__main__':
       for filename in files:
         file_path = os.path.join(root, filename)
 
-        with open(file_path, 'rb') as f:
+        with open(file_path, 'r') as f:
           f_content = f.read()
 
         r_file = render_file(f_content).render(**c)
