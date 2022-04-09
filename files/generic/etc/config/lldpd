@@ -1,10 +1,10 @@
 config lldpd config
+	# disable all other protocols except lldp
 	option enable_cdp 0
 	option enable_fdp 0
 	option enable_sonmp 0
 	option enable_edp 0
 
-	
 	option lldp_class 4
 	option lldp_location "2:FR:6:Commercial Rd:3:Roseville:19:4"
 
