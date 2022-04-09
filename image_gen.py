@@ -84,10 +84,7 @@ def generate_images(c, profile):
   puts(colored.blue('runing cmd:'))
   puts(colored.green(' '.join(make_cmd)))
 
-  p = Popen(make_cmd, stdout=PIPE, stderr=PIPE, bufsize=1)
-  for line in iter(p.stdout.readline, b''):
-    print(line, end=' ')
-  p.communicate()
+  os.spawnvpe(os.P_WAIT, make_cmd[0], make_cmd, os.environ)
 
 def rexec(rconfig, cmd):
   exec_cmd = [
@@ -98,10 +95,9 @@ def rexec(rconfig, cmd):
           cmd
           ]
 
-  p = Popen(exec_cmd, stdout=PIPE, stderr=PIPE, bufsize=1)
-  for line in iter(p.stdout.readline, b''):
-    print(line, end=' ')
-  p.communicate()
+  puts(colored.blue('exec cmd:'))
+  puts(colored.green(' '.join(exec_cmd)))
+  os.spawnvpe(os.P_WAIT, exec_cmd[0], exec_cmd, os.environ)
 
 def upload_file(rconfig, abs_file_path, upload_dir):
   upload_cmd = [
@@ -111,13 +107,10 @@ def upload_file(rconfig, abs_file_path, upload_dir):
                  ]
   print(upload_cmd)
 
-  p = Popen(upload_cmd, stdout=PIPE, stderr=PIPE, bufsize=1)
-  for line in iter(p.stdout.readline, b''):
-    print(line, end=' ')
-    p.communicate()
+  os.spawnvpe(os.P_WAIT, upload_cmd[0], upload_cmd, os.environ)
 
 def flash_image(c):
-    img_name = 'lede-17.01.1-ar71xx-generic-tl-wdr4300-v1-squashfs-sysupgrade.bin'
+    img_name = 'openwrt-21.02.1-ath79-generic-tplink_tl-wdr4300-v1-squashfs-sysupgrade.bin'
     bin_dir = '{}/images_gen/{}'.format(os.path.split(abs_template)[0], c['router']['hostname'])
 
     upload_file(c['router'], os.path.join(bin_dir, img_name), '/tmp')
