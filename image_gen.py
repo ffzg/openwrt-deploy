@@ -212,6 +212,7 @@ if __name__ == '__main__':
       for filename in files:
         file_path = os.path.join(root, filename)
 
+        puts(colored.blue(file_path))
         with open(file_path, 'r') as f:
           f_content = f.read()
 
