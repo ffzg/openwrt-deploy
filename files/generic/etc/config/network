@@ -6,7 +6,9 @@ config interface 'loopback'
 	option netmask '255.0.0.0'
 
 config interface 'mgmt'
-	option ifname 'eth0.1'
+	# this assumes that untagged traffic is configured for vlan20 on switch
+	#option ifname 'eth0.1'
+	option ifname 'eth0.20'
 	option force_link '1'
 	option type 'bridge'
 	option proto 'static'
@@ -76,5 +78,9 @@ config switch_vlan
 	option vlan '5'
 	option ports '0t 1t 2t 3t 4t 5t'
 
+config switch_vlan
+	option device 'switch0'
+	option vlan '20'
+	option ports '0t 1t 2t 3t 4t 5t'
 
 
